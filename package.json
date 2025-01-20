@@ -1,0 +1,22 @@
+{
+  "name": "rocket-readability",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@mozilla/readability": "^0.5.0"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.254",
+    "@types/mozilla__readability": "^0.4.2",
+    "@types/node": "^20.11.5",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.12",
+    "vite-plugin-web-extension": "^4.0.0"
+  }
+}

@@ -1,29 +1,29 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Rocket Readability",
-  "description": "This extension uses readability.js to parse out the 'cruft' leaving you with simply the article to read.",
-  "version": "0.0.0.6",
-  "background": {
-    "scripts": ["javascripts/background.js"]
-  },
-  "browser_action": {
-    "default_icon": "rocket.png"
-  },
-  "icons": {
-    "16": "rocket.png",
-    "48": "rocket.png",
-    "128": "rocket.png"
-  },
+  "version": "1.0.0",
+  "description": "A browser extension that makes web pages more readable using Mozilla's Readability library",
   "permissions": [
     "activeTab",
-    "storage"
+    "scripting"
   ],
+  "action": {
+    "default_icon": {
+      "48": "rocket.png",
+      "128": "rocket.png"
+    }
+  },
+  "background": {
+    "service_worker": "src/background.ts",
+    "type": "module"
+  },
   "content_scripts": [{
-    "matches": [
-      "http://*/*",
-      "https://*/*"
-    ],
-    "js": ["javascripts/readability.js", "javascripts/app.js"],
-    "css": ["styles/app.css"]
-  }]
+    "matches": ["<all_urls>"],
+    "js": ["src/content.ts"]
+  }],
+  "icons": {
+    "48": "rocket.png",
+    "128": "rocket.png"
+  }
 }
+
